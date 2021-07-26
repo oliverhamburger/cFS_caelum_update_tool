@@ -12,3 +12,12 @@ CFE_EVS_INFORMATION -> CFE_EVS_EventType_INFORMATION<br/>
 CFE_EVS_DEBUG -> CFE_EVS_EventType_DEBUG<br/>
 CFE_SB_MsgPtr_t -> CFE_MSG_Message_t *<br/>
 CFE_SB_Msg_t -> CFE_MSG_Message_t<br/>
+CFE_ES_RegisterChildTask(); -> remove<br/>
+CFE_ES_RegisterApp(); -> remove<br/>
+CFE_SB_GetTotalMsgLength(old parameters) -> CFE_MSG_GetSize(new parameters)<br/>
+CFE_SB_SetTotalMsgLength(old parameters) -> CFE_MSG_SetSize(new parameters)<br/>
+CFE_SB_GetMsgId(old parameters) -> CFE_MSG_GetMsgId(new parameters)<br/>
+CFE_SB_GetCmdCode(old parameters) -> CFE_MSG_GetFcnCode(new parameters)<br/>
+CFE_SB_SetCmdCode(old parameters) -> CFE_MSG_SetFcnCode(new parameters)<br/>
+CFE_SB_InitMsg(old parameters) -> CFE_MSG_Init(new parameters)<br/>
+CFE_SB_SendMsg(old parameters) -> CFE_SB_TransmitMsg(new parameters)<br/>
