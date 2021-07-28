@@ -14,10 +14,10 @@ CFE_SB_MsgPtr_t -> CFE_MSG_Message_t *<br/>
 CFE_SB_Msg_t -> CFE_MSG_Message_t<br/>
 CFE_ES_RegisterChildTask(); -> remove<br/>
 CFE_ES_RegisterApp(); -> remove<br/>
-CFE_SB_GetTotalMsgLength(old parameters) -> CFE_MSG_GetSize(new parameters)<br/>
-CFE_SB_SetTotalMsgLength(old parameters) -> CFE_MSG_SetSize(new parameters)<br/>
-CFE_SB_GetMsgId(old parameters) -> CFE_MSG_GetMsgId(new parameters)<br/>
-CFE_SB_GetCmdCode(old parameters) -> CFE_MSG_GetFcnCode(new parameters)<br/>
-CFE_SB_SetCmdCode(old parameters) -> CFE_MSG_SetFcnCode(new parameters)<br/>
-CFE_SB_InitMsg(old parameters) -> CFE_MSG_Init(new parameters)<br/>
-CFE_SB_SendMsg(old parameters) -> CFE_SB_TransmitMsg(new parameters)<br/>
+CFE_SB_GetTotalMsgLength(parameter); -> CFE_MSG_GetSize(CFE_MSG_Message_t *MsgPtr, CFE_MSG_Size_t *Size);<br/>                  
+CFE_SB_SetTotalMsgLength(parameter, parameter); -> CFE_MSG_SetSize(CFE_MSG_Message_t *MsgPtr, CFE_MSG_Size_t Size);<br/>
+CFE_SB_GetMsgId(parameter); -> CFE_MSG_GetMsgId(CFE_MSG_Message_t *MsgPtr, CFE_SB_MsgId_t *MsgId);<br/>
+CFE_SB_GetCmdCode(parameter); -> CFE_MSG_GetFcnCode(CFE_MSG_Message_t *MsgPtr, CFE_MSG_FcnCode_t *FcnCode);<br/>
+CFE_SB_SetCmdCode(parameter, parameter); -> CFE_MSG_SetFcnCode(CFE_MSG_Message_t *MsgPtr, CFE_MSG_FcnCode_t FcnCode);<br/>
+CFE_SB_InitMsg(parameter, parameter, parameter, parameter); -> CFE_MSG_Init(CFE_MSG_Message_t *MsgPtr, CFE_SB_MsgId_t MsgId, CFE_MSG_Size_t Size);<br/>
+CFE_SB_SendMsg(parameter); -> CFE_SB_TransmitMsg(CFE_MSG_Message_t *MsgPtr, bool IncrementSequenceCount);<br/>
