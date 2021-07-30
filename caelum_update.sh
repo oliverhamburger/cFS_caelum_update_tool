@@ -10,6 +10,7 @@ grep -rl --include \*.h --include \*.c "CFE_ES_APP_ERROR" . | xargs -t sed -i 's
 grep -rl --include \*.h --include \*.c "CFE_ES_APP_RUN" . | xargs -t sed -i 's/CFE_ES_APP_RUN/CFE_ES_RunStatus_APP_RUN/g'
 grep -rl --include \*.h --include \*.c "CFE_EVS_ERROR" . | xargs -t sed -i 's/CFE_EVS_ERROR/CFE_EVS_EventType_ERROR/g'
 grep -rl --include \*.h --include \*.c "CFE_EVS_INFORMATION" . | xargs -t sed -i 's/CFE_EVS_INFORMATION/CFE_EVS_EventType_INFORMATION/g'
+grep -rl --include \*.h --include \*.c "CFE_EVS_BINARY_FILTER" . | xargs -t sed -i 's/CFE_EVS_BINARY_FILTER/CFE_EVS_EventFilter_BINARY/g'
 grep -rl --include \*.h --include \*.c "CFE_EVS_DEBUG" . | xargs -t sed -i 's/CFE_EVS_DEBUG/CFE_EVS_EventType_DEBUG/g'
 grep -rl --include \*.h --include \*.c "CFE_SB_MsgPtr_t" . | xargs -t sed -i 's/CFE_SB_MsgPtr_t/CFE_MSG_Message_t */g'
 grep -rl --include \*.h --include \*.c "CFE_SB_Msg_t" . | xargs -t sed -i 's/CFE_SB_Msg_t/CFE_MSG_Message_t/g'
