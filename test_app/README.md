@@ -9,6 +9,7 @@ CFE_ES_APP_ERROR -> CFE_ES_RunStatus_APP_ERROR<br/>
 CFE_ES_APP_RUN -> CFE_ES_RunStatus_APP_RUN<br/>
 CFE_EVS_ERROR -> CFE_EVS_EventType_ERROR<br/>
 CFE_EVS_INFORMATION -> CFE_EVS_EventType_INFORMATION<br/>
+CFE_EVS_BINARY_FILTER -> CFE_EVS_EventFilter_BINARY<br/>
 CFE_EVS_DEBUG -> CFE_EVS_EventType_DEBUG<br/>
 CFE_SB_MsgPtr_t -> CFE_MSG_Message_t *<br/>
 CFE_SB_Msg_t -> CFE_MSG_Message_t<br/>
