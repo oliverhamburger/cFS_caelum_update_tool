@@ -26,4 +26,8 @@ grep -rl --include \*.h --include \*.c "CFE_SB_SetCmdCode" . | xargs -t sed -i '
 grep -rl --include \*.h --include \*.c "CFE_SB_InitMsg" . | xargs -t sed -i 's/CFE_SB_InitMsg(\(.*\), \(.*\), \(.*\), \(.*\))/CFE_MSG_Init(\CFE_MSG_Message_t *MsgPtr, \CFE_SB_MsgId_t MsgId, \CFE_MSG_Size_t Size)/g'
 grep -rl --include \*.h --include \*.c "CFE_SB_SendMsg" . | xargs -t sed -i 's/CFE_SB_SendMsg(\(.*\))/CFE_SB_TransmitMsg(\CFE_MSG_Message_t *MsgPtr, \bool IncrementSequenceCount)/g'
 grep -rl --include \*.h --include \*.c "CFE_SB_RcvMsg" . | xargs -t sed -i 's/CFE_SB_RcvMsg(\(.*\), \(.*\), \(.*\))/CFE_SB_ReceiveBuffer(\CFE_SB_Buffer_t **BufPtr, \CFE_SB_PipeId_t PipeId, \int32 TimeOut)/g'
+grep -rl --include \*.h --include \*.c "OS_open" . | xargs -t sed -i 's/OS_open(\(.*\), \(.*\), \(.*\))/OS_OpenCreate(osal_id_t *filedes, char *path, OS_FILE_FLAG_NONE, int32 access_mode)/g'
+grep -rl --include \*.h --include \*.c "OS_create" . | xargs -t sed -i 's/OS_create(\(.*\), \(.*\), \(.*\))/OS_OpenCreate(osal_id_t *filedes, char *path, OS_FILE_FLAG_CREATE | OS_FILE_FLAG_TRUNCATE, int32 access_mode)/g'
+grep -rl --include \*.h --include \*.c "CCSDS_RD_SID" . | xargs -t sed -i 's/CCSDS_RD_SID(\(.*\))/CFE_MSG_GetMsgId(CFE_MSG_Message_t *MsgPtr, CFE_SB_MsgId_t *MsgId)/g'
+grep -rl --include \*.h --include \*.c "CCSDS_RD_LEN" . | xargs -t sed -i 's/CCSDS_RD_LEN(\(.*\))/CFE_MSG_GetSize(CFE_MSG_Message_t *MsgPtr, CFE_MSG_Size_t *Size)/g'
 

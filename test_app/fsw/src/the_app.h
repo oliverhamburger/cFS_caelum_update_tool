@@ -21,3 +21,7 @@ CFE_SB_SetCmdCode(parameter, parameter); -> CFE_MSG_SetFcnCode(CFE_MSG_Message_t
 CFE_SB_InitMsg(parameter, parameter, parameter, parameter); -> CFE_MSG_Init(CFE_MSG_Message_t *MsgPtr, CFE_SB_MsgId_t MsgId, CFE_MSG_Size_t Size); 
 CFE_SB_SendMsg(parameter); -> CFE_SB_TransmitMsg(CFE_MSG_Message_t *MsgPtr, bool IncrementSequenceCount); 
 CFE_SB_RcvMsg(parameter); -> CFE_SB_ReceiveBuffer(CFE_SB_Buffer_t **BufPtr, CFE_SB_PipeId_t PipeId, int32 TimeOut);
+OS_open(parameter, parameter, parameter); -> OS_OpenCreate(osal_id_t *filedes, char *path, OS_FILE_FLAG_NONE, int32 access_mode);
+OS_create(parameter, parameter, parameter); -> OS_OpenCreate(osal_id_t *filedes, char *path, OS_FILE_FLAG_CREATE | OS_FILE_FLAG_TRUNCATE, int32 access_mode);
+CCSDS_RD_SID(parameter); -> CFE_MSG_GetMsgId(CFE_MSG_Message_t *MsgPtr, CFE_SB_MsgId_t *MsgId);
+CCSDS_RD_LEN(parameter); -> CFE_MSG_GetSize(CFE_MSG_Message_t *MsgPtr, CFE_MSG_Size_t *Size);
