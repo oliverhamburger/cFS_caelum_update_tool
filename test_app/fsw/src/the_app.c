@@ -13,6 +13,8 @@ CFE_SB_MsgPtr_t -> CFE_MSG_Message_t *
 CFE_SB_Msg_t -> CFE_MSG_Message_t 
 CFE_ES_RegisterChildTask(); -> remove 
 CFE_ES_RegisterApp(); -> remove 
+OS_FS_ERROR -> OS_ERROR
+OS_FS_SUCCESS -> OS_SUCCESS
 CFE_SB_GetTotalMsgLength(parameter); -> CFE_MSG_GetSize(CFE_MSG_Message_t *MsgPtr, CFE_MSG_Size_t *Size);                   
 CFE_SB_SetTotalMsgLength(parameter, parameter); -> CFE_MSG_SetSize(CFE_MSG_Message_t *MsgPtr, CFE_MSG_Size_t Size); 
 CFE_SB_GetMsgId(parameter); -> CFE_MSG_GetMsgId(CFE_MSG_Message_t *MsgPtr, CFE_SB_MsgId_t *MsgId); 
@@ -43,6 +45,8 @@ CFE_SB_MsgPtr_t -> CFE_MSG_Message_t *
 CFE_SB_Msg_t -> CFE_MSG_Message_t 
 CFE_ES_RegisterChildTask(); -> remove 
 CFE_ES_RegisterApp(); -> remove 
+OS_FS_ERROR -> OS_ERROR
+OS_FS_SUCCESS -> OS_SUCCESS
 CFE_SB_GetTotalMsgLength(parameter); -> CFE_MSG_GetSize(CFE_MSG_Message_t *MsgPtr, CFE_MSG_Size_t *Size);                   
 CFE_SB_SetTotalMsgLength(parameter, parameter); -> CFE_MSG_SetSize(CFE_MSG_Message_t *MsgPtr, CFE_MSG_Size_t Size); 
 CFE_SB_GetMsgId(parameter); -> CFE_MSG_GetMsgId(CFE_MSG_Message_t *MsgPtr, CFE_SB_MsgId_t *MsgId); 
