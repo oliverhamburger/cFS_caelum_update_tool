@@ -16,6 +16,9 @@ grep -rl --include \*.h --include \*.c "CFE_SB_MsgPtr_t" . | xargs -t sed -i 's/
 grep -rl --include \*.h --include \*.c "CFE_SB_Msg_t" . | xargs -t sed -i 's/CFE_SB_Msg_t/CFE_MSG_Message_t/g'
 grep -rl --include \*.h --include \*.c "CFE_ES_RegisterChildTask();" . | xargs -t sed -i 's/CFE_ES_RegisterChildTask();//g'
 grep -rl --include \*.h --include \*.c "CFE_ES_RegisterApp();" . | xargs -t sed -i 's/CFE_ES_RegisterApp();//g'
+grep -rl --include \*.h --include \*.c "OS_FS_ERROR" . | xargs -t sed -i 's/OS_FS_ERROR/OS_ERROR/g'
+grep -rl --include \*.h --include \*.c "OS_FS_SUCCESS" . | xargs -t sed -i 's/OS_FS_SUCCESS/OS_SUCCESS/g'
+
 
 #These replacements require changes to the parameters passed in, so the replacement includes the function prototype to allow the user to quickly make parameter changes
 grep -rl --include \*.h --include \*.c "CFE_SB_GetTotalMsgLength" . | xargs -t sed -i 's/CFE_SB_GetTotalMsgLength(\(.*\))/CFE_MSG_GetSize(\CFE_MSG_Message_t *MsgPtr, \CFE_MSG_Size_t *Size)/g'
