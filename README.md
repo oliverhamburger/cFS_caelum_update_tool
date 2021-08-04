@@ -1,5 +1,5 @@
 # cFS Caelum Update Tool
-This is a simple tool that does some of cFS calelum updates for an out of date app.
+This is a simple tool that does some cFS calelum updates for an out of date app.
 
 ## What it does and does not do
 The script, `caelum_update.sh` consists of various grep and sed commands to make replacements to out of date parts of code such as `TRUE`, `FALSE`, `boolean`, deprecated CFE api macros, and more. The script will make a direct replacement for all the instances of the out of date keyword that is being looked for in all `.h` and `.c` files. The commands follow the following format: `grep -rl --include \*.h --include \*.c "Old_keyword" . | xargs -t sed -i 's/Old_keyword/New_keyword/g'` where `Old_keyword` is the uncopatible caelum code and the `New_keyword` is the appropriate replacement. For marcros, booleans, and a few api calls that are removed, the script does a complete functioning replacement but for the rest of the updated api calls the script replaces the api call with the apripriate new api prototype as some of the parameters and output of the replacement api calls differ from the original non-caelum api calls. The prototypes will have to be filled in with the apropriate parameters and may involve restructuring blocks of code. 
